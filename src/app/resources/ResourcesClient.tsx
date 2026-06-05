@@ -2,12 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { FileText, Download, Eye, Quote } from "lucide-react";
+import { FileText, Download, Eye } from "lucide-react";
 import Section from "@/components/Section";
 
 const resources = [
-// ...
   {
     title: "Regional Education Conference",
     description: "East African Community Regional Education Conference Commemorating the AU Year of Education.",
@@ -24,7 +22,7 @@ export default function ResourcesClient() {
   return (
     <div className="bg-white min-h-screen">
       {/* --- HERO --- */}
-      <section className="pt-40 md:pt-48 pb-24 px-6 bg-brand-sand/50 relative overflow-hidden">
+      <section className="pt-48 pb-24 px-6 bg-brand-sand/50 relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,47 +39,6 @@ export default function ResourcesClient() {
         {/* Background elements */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-blue/5 -skew-x-12 transform origin-top translate-x-20" />
       </section>
-
-      {/* --- RESEARCH SUMMARY (Migrated from Publication) --- */}
-      <Section className="bg-brand-sand/30">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-            className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl"
-          >
-            <Image 
-              src="/images/project_0_4.jpg" 
-              alt="Research and Policy" 
-              fill 
-              className="object-cover"
-            />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="w-16 h-16 bg-brand-blue rounded-2xl flex items-center justify-center text-white mb-8">
-              <Quote size={32} />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-8 leading-tight">Evidence-Based <br />Policy Analysis</h2>
-            <div className="space-y-6 text-gray-600 text-lg leading-relaxed text-pretty">
-              <p>
-                Hindis is dedicated to research focused on foundational learning (literacy and numeracy), particularly in early child and primary education.
-              </p>
-              <p>
-                Our team meticulously analyzes every pedagogical strategy to ensure they are engaging, culturally relevant, and responsive to the unique challenges of the Somali education system.
-              </p>
-              <p>
-                By collaborating with international researchers and local stakeholders, we produce insights that drive systemic change and improve learning outcomes for millions of children.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </Section>
 
       {/* --- RESOURCES LIST --- */}
       <Section className="bg-white">

@@ -16,7 +16,6 @@ const navLinks = [
   { name: "Services", href: "/services" },
   { name: "FAQ", href: "/faq" },
   { name: "Publication", href: "/publication" },
-  { name: "Resources", href: "/resources" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -45,10 +44,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center group">
           <div className="relative w-48 h-20 group-hover:scale-105 transition-transform">
-            <Image 
-              src="/images/logo.png" 
-              alt="Hindis Logo" 
-              fill 
+            <Image
+              src="/images/logo.png"
+              alt="Hindis Logo"
+              fill
               className="object-contain"
               priority
             />

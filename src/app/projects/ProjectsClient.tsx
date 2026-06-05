@@ -100,8 +100,8 @@ export default function ProjectsClient() {
     <div className="bg-white min-h-screen">
 
       {/* --- HERO --- */}
-      <section className="pt-40 md:pt-48 pb-24 px-6 bg-brand-sand/50 relative overflow-hidden">
-        <motion.div 
+      <section className="pt-48 pb-24 px-6 bg-brand-sand/50 relative overflow-hidden">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
@@ -160,10 +160,10 @@ export default function ProjectsClient() {
               className="order-1 md:order-2 relative aspect-square rounded-[3.5rem] bg-brand-sand overflow-hidden shadow-2xl"
             >
               <Image
-                src="/images/booksforafrica.jpg"
+                src="/images/logo.png"
                 alt="Books For Africa Partnership"
                 fill
-                className="object-cover"
+                className="object-contain p-20 opacity-80"
               />
             </motion.div>
           </div>

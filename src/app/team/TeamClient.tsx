@@ -11,7 +11,7 @@ export default function TeamClient() {
 
       {/* --- HERO --- */}
       <section className="pt-48 pb-24 px-6 bg-brand-sand/50 relative overflow-hidden">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}

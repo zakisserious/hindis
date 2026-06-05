@@ -66,7 +66,7 @@ export default function PublicationClient() {
             className="relative aspect-video rounded-[3rem] bg-gray-900 overflow-hidden shadow-2xl group border-8 border-brand-sand/30"
           >
             <video
-              src="https://res.cloudinary.com/ddz4fvllb/video/upload/q_auto,f_auto,vc_auto,w_1280,q_70/Hindis_qqiea4.mp4"
+              src="/videos/Hindis.mp4"
               controls
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -90,16 +90,54 @@ export default function PublicationClient() {
             className="relative aspect-video rounded-[3rem] bg-gray-900 overflow-hidden shadow-2xl group border-8 border-brand-sand/30"
           >
             <video
-              src="https://res.cloudinary.com/ddz4fvllb/video/upload/q_auto,f_auto,vc_auto,w_1280,q_70/The_launch_of_Hindis_oovrjq.mp4"
+              src="/videos/The launch of Hindis.mp4"
               controls
-              preload="metadata"
-              playsInline
               className="absolute inset-0 w-full h-full object-cover"
             />
           </motion.div>
         </div>
       </Section>
 
+      {/* --- RESEARCH SUMMARY --- */}
+      <Section className="bg-brand-sand/30">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+            className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl"
+          >
+            <Image
+              src="/images/project_0_4.jpg"
+              alt="Research and Policy"
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="w-16 h-16 bg-brand-blue rounded-2xl flex items-center justify-center text-white mb-8">
+              <Quote size={32} />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-8 leading-tight">Evidence-Based <br />Policy Analysis</h2>
+            <div className="space-y-6 text-gray-600 text-lg leading-relaxed text-pretty">
+              <p>
+                Hindis is dedicated to research focused on foundational learning (literacy and numeracy), particularly in early child and primary education.
+              </p>
+              <p>
+                Our team meticulously analyzes every pedagogical strategy to ensure they are engaging, culturally relevant, and responsive to the unique challenges of the Somali education system.
+              </p>
+              <p>
+                By collaborating with international researchers and local stakeholders, we produce insights that drive systemic change and improve learning outcomes for millions of children.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </Section>
 
 
     </div>

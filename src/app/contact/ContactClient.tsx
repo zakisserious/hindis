@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Section from "@/components/Section";
 import { motion } from "framer-motion";
 
-const ContactInfo = ({ icon: Icon, title, content }: { icon: any; title: string; content: string }) => (
+const ContactInfo = ({ icon: Icon, title, content }: { icon: any; title: string; content: React.ReactNode }) => (
   <motion.div
     initial={{ opacity: 0, y: 15 }}
     whileInView={{ opacity: 1, y: 0 }}

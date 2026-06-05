@@ -26,7 +26,64 @@ const PublicationCard = ({ title, type, date }: { title: string; type: string; d
     </div>
   </motion.div>
 );
+const JournalExcerpt = () => (
+  <a
+    href="https://sahanjournal.com/education/somali-language-classes-new-curriculum-minnesota/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block group"
+    aria-label="Read the full Sahan Journal article about the new Somali curriculum"
+  >
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="p-8 md:p-12 bg-white rounded-3xl shadow-sm border border-brand-sand/50 hover:border-brand-blue transition-all overflow-hidden"
+    >
+      {/* Image */}
+      <div className="relative aspect-[16/10] md:aspect-[780/520] w-full mb-8 rounded-2xl overflow-hidden">
+        <Image
+          src="https://i0.wp.com/sahanjournal.com/wp-content/uploads/2026/01/SaidaHassan-4535-scaled.jpg?resize=780%2C520&ssl=1"
+          alt="Saida Hassan presenting in a classroom"
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-700"
+        />
+      </div>
 
+      {/* Content */}
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-11 h-11 rounded-2xl bg-brand-sand/60 flex items-center justify-center text-brand-blue flex-shrink-0">
+          <Quote size={26} />
+        </div>
+        <div>
+          <span className="text-xs font-bold text-brand-blue uppercase tracking-widest">Featured in</span>
+          <p className="text-sm text-gray-500">Sahan Journal • February 26, 2026</p>
+        </div>
+      </div>
+
+      <h3 className="text-2xl md:text-3xl font-display font-bold text-gray-900 leading-tight mb-6 group-hover:text-brand-blue transition-colors">
+        New Somali curriculum helps bridge gap for Minnesota schools
+      </h3>
+
+      <div className="prose prose-gray max-w-none text-[17px] leading-relaxed mb-8">
+        <p>
+          Hindis founder Saida Hassan developed a first-grade Somali language curriculum aligned with Minnesota standards, making dual-language programs more sustainable for teachers.
+        </p>
+
+        <blockquote className="border-l-4 border-brand-blue pl-6 italic my-8 text-lg text-gray-700">
+          “I’m hoping that this becomes something that is embedded in the education system here. We will produce more confident, more academically rich children who are bilingual.”
+        </blockquote>
+      </div>
+
+      {/* Click indicator */}
+      <div className="flex items-center justify-end text-brand-blue font-semibold text-sm group-hover:gap-3 transition-all">
+        Read full article on Sahan Journal
+        <span className="text-xl">→</span>
+      </div>
+    </motion.div>
+  </a>
+);
 export default function PublicationClient() {
   return (
     <div className="bg-white min-h-screen">
@@ -49,6 +106,19 @@ export default function PublicationClient() {
         {/* Background elements */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-blue/5 -skew-x-12 transform origin-top translate-x-20" />
       </section>
+      {/* --- JOURNAL EXCERPT --- */}
+      <Section className="bg-white py-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-4">
+              In the News
+            </h2>
+            <p className="text-gray-500 text-lg">Hindis featured in Sahan Journal</p>
+          </div>
+
+          <JournalExcerpt />
+        </div>
+      </Section>
 
       {/* --- FEATURED VIDEO: LAUNCH OF HINDIS --- */}
       <Section className="bg-white">
@@ -66,7 +136,7 @@ export default function PublicationClient() {
             className="relative aspect-video rounded-[3rem] bg-gray-900 overflow-hidden shadow-2xl group border-8 border-brand-sand/30"
           >
             <video
-              src="/videos/Hindis.mp4"
+              src="https://res.cloudinary.com/ddz4fvllb/video/upload/q_auto,f_auto,vc_auto,w_1280,q_70/Hindis_qqiea4.mp4"
               controls
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -90,54 +160,16 @@ export default function PublicationClient() {
             className="relative aspect-video rounded-[3rem] bg-gray-900 overflow-hidden shadow-2xl group border-8 border-brand-sand/30"
           >
             <video
-              src="/videos/The launch of Hindis.mp4"
+              src="https://res.cloudinary.com/ddz4fvllb/video/upload/q_auto,f_auto,vc_auto,w_1280,q_70/The_launch_of_Hindis_oovrjq.mp4"
               controls
+              preload="metadata"
+              playsInline
               className="absolute inset-0 w-full h-full object-cover"
             />
           </motion.div>
         </div>
       </Section>
 
-      {/* --- RESEARCH SUMMARY --- */}
-      <Section className="bg-brand-sand/30">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-            className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl"
-          >
-            <Image
-              src="/images/project_0_4.jpg"
-              alt="Research and Policy"
-              fill
-              className="object-cover"
-            />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="w-16 h-16 bg-brand-blue rounded-2xl flex items-center justify-center text-white mb-8">
-              <Quote size={32} />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-8 leading-tight">Evidence-Based <br />Policy Analysis</h2>
-            <div className="space-y-6 text-gray-600 text-lg leading-relaxed text-pretty">
-              <p>
-                Hindis is dedicated to research focused on foundational learning (literacy and numeracy), particularly in early child and primary education.
-              </p>
-              <p>
-                Our team meticulously analyzes every pedagogical strategy to ensure they are engaging, culturally relevant, and responsive to the unique challenges of the Somali education system.
-              </p>
-              <p>
-                By collaborating with international researchers and local stakeholders, we produce insights that drive systemic change and improve learning outcomes for millions of children.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </Section>
 
 
     </div>

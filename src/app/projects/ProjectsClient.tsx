@@ -35,7 +35,7 @@ const ProjectCard = ({ project, idx }: { project: Project; idx: number }) => {
   const prevImage = () => setCurrentImage((prev) => (prev - 1 + project.images.length) % project.images.length);
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -53,15 +53,15 @@ const ProjectCard = ({ project, idx }: { project: Project; idx: number }) => {
             transition={{ duration: 0.5 }}
             className="absolute inset-0"
           >
-            <Image 
-              src={project.images[currentImage]} 
-              alt={project.title} 
-              fill 
-              className="object-cover" 
+            <Image
+              src={project.images[currentImage]}
+              alt={project.title}
+              fill
+              className="object-cover"
             />
           </motion.div>
         </AnimatePresence>
-        
+
         {/* Navigation Overlays */}
         {project.images.length > 1 && (
           <div className="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -77,9 +77,9 @@ const ProjectCard = ({ project, idx }: { project: Project; idx: number }) => {
         {/* Indicators */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5 px-3 py-1.5 rounded-full bg-black/20 backdrop-blur-sm">
           {project.images.map((_, i) => (
-            <div 
-              key={i} 
-              className={`w-1.5 h-1.5 rounded-full transition-all ${i === currentImage ? "bg-white w-4" : "bg-white/40"}`} 
+            <div
+              key={i}
+              className={`w-1.5 h-1.5 rounded-full transition-all ${i === currentImage ? "bg-white w-4" : "bg-white/40"}`}
             />
           ))}
         </div>
@@ -97,27 +97,29 @@ const ProjectCard = ({ project, idx }: { project: Project; idx: number }) => {
 
 export default function ProjectsClient() {
   return (
-    <div className="bg-brand-sand/10 min-h-screen">
-      
+    <div className="bg-white min-h-screen">
+
       {/* --- HERO --- */}
-      <section className="pt-40 pb-24 px-6 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-7xl font-display font-extrabold text-gray-900 mb-8"
-          >
-            Impact & <span className="text-brand-teal">Innovation</span>
-          </motion.h1>
-          <p className="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
+      <section className="pt-40 md:pt-48 pb-24 px-6 bg-brand-sand/50 relative overflow-hidden">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-7xl mx-auto text-center relative z-10"
+        >
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-gray-900 mb-8 tracking-tight">
+            Impact & <span className="text-brand-blue">Innovation</span>
+          </h1>
+          <p className="text-gray-600 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed italic text-pretty">
             Our initiatives are designed to revolutionize foundational learning in Somalia, combining local cultural roots with global educational standards.
           </p>
-        </div>
+        </motion.div>
+        {/* Background elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-blue/5 -skew-x-12 transform origin-top translate-x-20" />
       </section>
 
       {/* --- PROJECTS GRID --- */}
-      <Section containerClassName="max-w-7xl">
+      <Section className="bg-white" containerClassName="max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {projects.map((project, idx) => (
             <ProjectCard key={project.id} project={project} idx={idx} />
@@ -130,13 +132,6 @@ export default function ProjectsClient() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div className="order-2 md:order-1">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-teal/10 rounded-full text-brand-teal font-bold text-sm mb-6">
-                <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-teal opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-teal"></span>
-                </span>
-                Global Partnership
-              </div>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-8 tracking-tight">Books For Africa</h2>
               <div className="space-y-6 text-gray-600 text-lg leading-relaxed text-pretty">
                 <p>
@@ -147,56 +142,36 @@ export default function ProjectsClient() {
                 </p>
                 <div className="pt-8 grid grid-cols-2 gap-8">
                   <div>
-                    <div className="text-4xl font-display font-extrabold text-brand-teal mb-1">41,000+</div>
+                    <div className="text-4xl font-display font-extrabold text-brand-blue mb-1">41,000+</div>
                     <p className="text-gray-400 font-bold uppercase tracking-widest text-[10px]">Resource Delivered</p>
                   </div>
                   <div>
-                    <div className="text-4xl font-display font-extrabold text-brand-teal mb-1">100+</div>
+                    <div className="text-4xl font-display font-extrabold text-brand-blue mb-1">100+</div>
                     <p className="text-gray-400 font-bold uppercase tracking-widest text-[10px]">Schools Supported</p>
                   </div>
                 </div>
               </div>
             </div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
               className="order-1 md:order-2 relative aspect-square rounded-[3.5rem] bg-brand-sand overflow-hidden shadow-2xl"
             >
-               <Image 
-                src="/images/logo.png" 
-                alt="Books For Africa Partnership" 
-                fill 
-                className="object-contain p-20 opacity-80"
+              <Image
+                src="/images/booksforafrica.jpg"
+                alt="Books For Africa Partnership"
+                fill
+                className="object-cover"
               />
             </motion.div>
           </div>
         </div>
       </Section>
 
-      {/* --- GLOBAL IMPACT FOOTPRINT --- */}
-      <div className="bg-white py-20 border-b border-brand-sand">
-        <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-center items-center gap-16 opacity-40">
-          <div className="text-center">
-            <div className="text-3xl font-display font-extrabold text-brand-teal mb-1">Global</div>
-            <p className="text-gray-400 font-bold uppercase tracking-widest text-[9px]">Partnership Network</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-display font-extrabold text-brand-teal mb-1">41k+</div>
-            <p className="text-gray-400 font-bold uppercase tracking-widest text-[9px]">Books Distributed</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-display font-extrabold text-brand-teal mb-1">10k+</div>
-            <p className="text-gray-400 font-bold uppercase tracking-widest text-[9px]">Students Impacted</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-display font-extrabold text-brand-teal mb-1">Foundational</div>
-            <p className="text-gray-400 font-bold uppercase tracking-widest text-[9px]">Learning Standard</p>
-          </div>
-        </div>
-      </div>
-      
+
+
     </div>
   );
 }

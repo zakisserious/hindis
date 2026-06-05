@@ -16,6 +16,7 @@ const navLinks = [
   { name: "Services", href: "/services" },
   { name: "FAQ", href: "/faq" },
   { name: "Publication", href: "/publication" },
+  { name: "Resources", href: "/resources" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -37,7 +38,7 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
         scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm py-3"
+          ? "bg-brand-sand/90 backdrop-blur-md shadow-sm py-3"
           : "bg-transparent"
       )}
     >
@@ -61,8 +62,8 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-brand-teal",
-                pathname === link.href ? "text-brand-teal font-bold" : "text-gray-600"
+                "text-sm font-medium transition-colors hover:text-brand-blue",
+                pathname === link.href ? "text-brand-blue font-bold" : "text-gray-600"
               )}
             >
               {link.name}
@@ -72,7 +73,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-brand-teal p-2"
+          className="md:hidden text-brand-blue p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -86,7 +87,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t mt-4 rounded-2xl shadow-xl overflow-hidden"
+            className="md:hidden bg-brand-sand border-t mt-4 rounded-2xl shadow-xl overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
@@ -96,7 +97,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={cn(
                     "text-lg font-medium flex items-center justify-between group",
-                    pathname === link.href ? "text-brand-teal" : "text-gray-600"
+                    pathname === link.href ? "text-brand-blue" : "text-gray-600"
                   )}
                 >
                   {link.name}
@@ -106,7 +107,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="bg-brand-teal text-white text-center py-4 rounded-xl font-bold mt-2"
+                className="bg-brand-blue text-white text-center py-4 rounded-xl font-bold mt-2"
               >
                 Contact Us
               </Link>

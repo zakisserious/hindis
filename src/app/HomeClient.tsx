@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 const StatCard = ({ number, label, suffix = "+" }: { number: string; label: string; suffix?: string }) => (
   <div className="flex flex-col items-center text-center p-8 bg-white rounded-2xl shadow-sm border border-brand-sand/50">
-    <span className="text-4xl md:text-5xl font-display font-extrabold text-brand-teal mb-2">
+    <span className="text-4xl md:text-5xl font-display font-extrabold text-brand-blue mb-2">
       {number}{suffix}
     </span>
     <span className="text-gray-500 text-sm font-medium uppercase tracking-wider">{label}</span>
@@ -36,15 +36,17 @@ export default function HomeClient() {
       
       {/* --- HERO SECTION --- */}
       <section className="relative min-h-[90vh] flex items-center pt-20 px-6">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent z-10" />
-          <Image 
-            src="/images/hero_classroom.jpg" 
-            alt="Somali children learning" 
-            fill 
-            className="object-cover"
-            priority
-          />
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-transparent z-10 md:via-white/95" />
+          <div className="absolute inset-0">
+            <Image 
+              src="/images/hero_classroom.jpg" 
+              alt="Somali children learning" 
+              fill 
+              className="object-cover object-[80%_center] md:object-center opacity-70 md:opacity-100 translate-x-10 md:translate-x-0"
+              priority
+            />
+          </div>
         </div>
 
         <div className="max-w-7xl mx-auto w-full relative z-20">
@@ -56,7 +58,7 @@ export default function HomeClient() {
           >
             <h1 className="text-5xl md:text-8xl font-display font-extrabold text-gray-900 leading-[1.05] mb-8 text-pretty">
               Literacy &amp; Numeracy: <br />
-              <span className="text-brand-teal">The Foundation</span> of Power.
+              <span className="text-brand-blue">The Foundation</span> of Power.
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl text-pretty">
               Your partner in pioneering quality foundational learning. We collaborate with local communities and government to elevate early education, addressing unique student needs for a global future.
@@ -64,7 +66,7 @@ export default function HomeClient() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 href="/projects" 
-                className="bg-brand-teal text-white px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-2 hover:bg-brand-teal/90 transition-all hover:shadow-2xl hover:-translate-y-1"
+                className="bg-brand-blue text-white px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-2 hover:bg-brand-blue/90 transition-all hover:shadow-2xl hover:-translate-y-1"
               >
                 Explore Projects <ArrowRight size={20} />
               </Link>
@@ -93,19 +95,19 @@ export default function HomeClient() {
           <ValueCard 
             icon={Target}
             title="Competence"
-            colorClass="bg-brand-teal"
+            colorClass="bg-brand-blue"
             description="Prioritizing essential skills and knowledge that enable children to excel academically and thrive in practical life."
           />
           <ValueCard 
             icon={Zap}
             title="Productivity"
-            colorClass="bg-brand-terracotta"
+            colorClass="bg-brand-red"
             description="Cultivating the ability to contribute effectively to society, fostering a strong work ethic and the capacity for meaningful outcomes."
           />
           <ValueCard 
             icon={Heart}
             title="Compassion"
-            colorClass="bg-brand-teal/80"
+            colorClass="bg-brand-blue/80"
             description="Deepening empathy and understanding, promoting a culture of kindness and social responsibility from the earliest years."
           />
         </div>
@@ -134,7 +136,7 @@ export default function HomeClient() {
             </h2>
             <div className="space-y-8">
               <div className="flex gap-5">
-                <div className="shrink-0 w-12 h-12 rounded-full bg-brand-teal/10 flex items-center justify-center text-brand-teal">
+                <div className="shrink-0 w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue">
                   <BookOpen size={24} />
                 </div>
                 <div>
@@ -145,7 +147,7 @@ export default function HomeClient() {
                 </div>
               </div>
               <div className="flex gap-5">
-                <div className="shrink-0 w-12 h-12 rounded-full bg-brand-terracotta/10 flex items-center justify-center text-brand-terracotta">
+                <div className="shrink-0 w-12 h-12 rounded-full bg-brand-red/10 flex items-center justify-center text-brand-red">
                   <Users size={24} />
                 </div>
                 <div>
@@ -161,29 +163,53 @@ export default function HomeClient() {
       </Section>
 
       {/* --- STATS SECTION --- */}
-      <section className="py-24 bg-brand-teal relative overflow-hidden">
+      <section className="py-24 bg-brand-blue relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div className="w-full h-full bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]" />
         </div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-center"
+            >
               <div className="text-4xl md:text-6xl font-display font-extrabold text-white mb-2">41k+</div>
               <p className="text-brand-sand/80 text-sm font-bold uppercase tracking-widest">Books Delivered</p>
-            </div>
-            <div className="text-center">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-center"
+            >
               <div className="text-4xl md:text-6xl font-display font-extrabold text-white mb-2">Impactful</div>
               <p className="text-brand-sand/80 text-sm font-bold uppercase tracking-widest">Global Partnerships</p>
-            </div>
-            <div className="text-center">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-center"
+            >
               <div className="text-4xl md:text-6xl font-display font-extrabold text-white mb-2">1st</div>
               <p className="text-brand-sand/80 text-sm font-bold uppercase tracking-widest">Language Curriculum</p>
-            </div>
-            <div className="text-center">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-center"
+            >
               <div className="text-4xl md:text-6xl font-display font-extrabold text-white mb-2">∞</div>
               <p className="text-brand-sand/80 text-sm font-bold uppercase tracking-widest">Boundless Potential</p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -193,32 +219,32 @@ export default function HomeClient() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <div className="order-2 md:order-1">
             <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-8">
-              Leveraging AI for <br /><span className="text-brand-teal">Personalized Learning</span>
+              Leveraging AI for <br /><span className="text-brand-blue">Personalized Learning</span>
             </h2>
             <p className="text-gray-600 text-lg mb-8 leading-relaxed">
               We are revolutionizing early childhood education by integrating AI-powered tools and digital platforms. This personalized approach ensures no student is left behind, adapting to their pace and style.
             </p>
             <ul className="space-y-4 mb-10">
               <li className="flex items-center gap-3 text-gray-700 font-medium font-display">
-                <div className="w-6 h-6 rounded-full bg-brand-teal flex items-center justify-center text-white shrink-0">
+                <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center text-white shrink-0">
                   <CheckCircle2 size={14} />
                 </div>
                 Data-driven educational monitoring
               </li>
               <li className="flex items-center gap-3 text-gray-700 font-medium font-display">
-                <div className="w-6 h-6 rounded-full bg-brand-teal flex items-center justify-center text-white shrink-0">
+                <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center text-white shrink-0">
                   <CheckCircle2 size={14} />
                 </div>
                 AI-powered curriculum adaptation
               </li>
               <li className="flex items-center gap-3 text-gray-700 font-medium font-display">
-                <div className="w-6 h-6 rounded-full bg-brand-teal flex items-center justify-center text-white shrink-0">
+                <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center text-white shrink-0">
                   <CheckCircle2 size={14} />
                 </div>
                 Teacher empowerment via smart analytics
               </li>
             </ul>
-            <Link href="/services" className="text-brand-teal font-bold flex items-center gap-2 group">
+            <Link href="/services" className="text-brand-blue font-bold flex items-center gap-2 group">
               Learn about our AI services <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -248,7 +274,7 @@ export default function HomeClient() {
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-4xl mx-auto text-center"
         >
-          <div className="w-20 h-20 bg-white rounded-3xl shadow-sm flex items-center justify-center mx-auto mb-10 text-brand-teal">
+          <div className="w-20 h-20 bg-white rounded-3xl shadow-sm flex items-center justify-center mx-auto mb-10 text-brand-blue">
             <Cpu size={40} />
           </div>
           <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-8">
@@ -259,7 +285,7 @@ export default function HomeClient() {
           </p>
           <Link 
             href="/about" 
-            className="inline-flex items-center gap-2 bg-brand-teal text-white px-10 py-5 rounded-full font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all"
+            className="inline-flex items-center gap-2 bg-brand-blue text-white px-10 py-5 rounded-full font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all"
           >
             Learn More
           </Link>
@@ -273,7 +299,7 @@ export default function HomeClient() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-5xl mx-auto bg-brand-teal rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl"
+          className="max-w-5xl mx-auto bg-brand-blue rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl"
         >
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
@@ -289,7 +315,7 @@ export default function HomeClient() {
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <Link 
                 href="/about" 
-                className="bg-white text-brand-teal px-10 py-5 rounded-full font-extrabold text-lg hover:bg-brand-sand transition-all shadow-lg"
+                className="bg-white text-brand-blue px-10 py-5 rounded-full font-extrabold text-lg hover:bg-brand-sand transition-all shadow-lg"
               >
                 Our Mission
               </Link>

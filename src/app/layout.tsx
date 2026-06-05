@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   },
   description: "Pioneering quality foundational learning (literacy and numeracy) in Somalia through innovative, technology-driven teaching.",
   icons: {
-    icon: "/images/logoheader.png",
-    shortcut: "/images/logoheader.png",
-    apple: "/images/logoheader.png",
+    icon: "/images/hindis-favicon-48x48.png",
+    shortcut: "/images/hindis-favicon-48x48.png",
+    apple: "/images/hindis-favicon-48x48.png",
   }
 };
 

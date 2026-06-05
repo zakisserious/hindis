@@ -6,13 +6,13 @@ import Section from "@/components/Section";
 import { motion } from "framer-motion";
 
 const ContactInfo = ({ icon: Icon, title, content }: { icon: any; title: string; content: string }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, y: 15 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     className="flex items-start gap-6 group"
   >
-    <div className="w-14 h-14 rounded-2xl bg-brand-teal/10 flex items-center justify-center text-brand-teal shrink-0 group-hover:scale-110 transition-transform">
+    <div className="w-14 h-14 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue shrink-0 group-hover:scale-110 transition-transform">
       <Icon size={24} />
     </div>
     <div>
@@ -23,46 +23,46 @@ const ContactInfo = ({ icon: Icon, title, content }: { icon: any; title: string;
 );
 
 const InstagramIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
 );
 
-const TwitterIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+const TikTokIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" /></svg>
 );
 
 const FacebookIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
 );
 
 export default function ContactClient() {
   return (
-    <div className="bg-brand-sand/10 min-h-screen">
-      
+    <div className="bg-white min-h-screen">
+
       {/* --- HERO --- */}
-      <section className="pt-40 pb-20 px-6 bg-brand-sand/10 relative overflow-hidden">
-        <motion.div 
+      <section className="pt-40 md:pt-48 pb-24 px-6 bg-brand-sand/50 relative overflow-hidden">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-7xl mx-auto relative z-10"
+          className="max-w-7xl mx-auto text-center relative z-10"
         >
-          <h1 className="text-5xl md:text-7xl font-display font-extrabold mb-8">
-            Get in <span className="text-brand-sand">Touch</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-gray-900 mb-8 tracking-tight">
+            Get in <span className="text-brand-blue">Touch</span>
           </h1>
-          <p className="text-brand-sand/80 text-xl max-w-2xl leading-relaxed text-pretty">
-            We are always open to new partnerships, research collaborations, and community dialogues. Reach out to us and let&apos;s shape the future of education together.
+          <p className="text-gray-600 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed italic text-pretty">
+            We are always open to new partnerships, research collaborations, and community dialogues. Reach out and let&apos;s shape the future of education together.
           </p>
         </motion.div>
-        {/* Subtle Decoration */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        {/* Background elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-blue/5 -skew-x-12 transform origin-top translate-x-20" />
       </section>
 
       {/* --- CONTACT GRID --- */}
       <Section className="bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch">
-          
+
           {/* Form */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -74,22 +74,22 @@ export default function ContactClient() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div className="space-y-3">
                   <label className="text-sm font-bold text-gray-400 uppercase tracking-widest pl-2">Full Name</label>
-                  <input type="text" placeholder="Your Name" className="w-full bg-white/60 border border-gray-200 px-6 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-teal transition-all" />
+                  <input type="text" placeholder="Your Name" className="w-full bg-white/60 border border-gray-200 px-6 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue transition-all" />
                 </div>
                 <div className="space-y-3">
                   <label className="text-sm font-bold text-gray-400 uppercase tracking-widest pl-2">Email Address</label>
-                  <input type="email" placeholder="email@example.com" className="w-full bg-white/60 border border-gray-200 px-6 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-teal transition-all" />
+                  <input type="email" placeholder="email@example.com" className="w-full bg-white/60 border border-gray-200 px-6 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue transition-all" />
                 </div>
               </div>
               <div className="space-y-3">
                 <label className="text-sm font-bold text-gray-400 uppercase tracking-widest pl-2">Subject</label>
-                <input type="text" placeholder="How can we help?" className="w-full bg-white/60 border border-gray-200 px-6 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-teal transition-all" />
+                <input type="text" placeholder="How can we help?" className="w-full bg-white/60 border border-gray-200 px-6 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue transition-all" />
               </div>
               <div className="space-y-3">
                 <label className="text-sm font-bold text-gray-400 uppercase tracking-widest pl-2">Message</label>
-                <textarea rows={5} placeholder="Tell us more about your inquiry..." className="w-full bg-white/60 border border-gray-200 px-6 py-6 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-teal transition-all resize-none"></textarea>
+                <textarea rows={5} placeholder="Tell us more about your inquiry..." className="w-full bg-white/60 border border-gray-200 px-6 py-6 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue transition-all resize-none"></textarea>
               </div>
-              <button disabled className="w-full bg-brand-teal text-white py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-brand-teal/90 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
+              <button disabled className="w-full bg-brand-blue text-white py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-brand-blue/90 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
                 Send Message <Send size={20} />
               </button>
             </form>
@@ -103,23 +103,32 @@ export default function ContactClient() {
                 Connect with our team across our mission centers. We aim to respond to all inquiries within 48 hours.
               </p>
             </div>
-            
+
             <div className="space-y-10">
-              <ContactInfo icon={MapPin} title="Our Location" content="Mogadishu, Somalia" />
-              <ContactInfo icon={Phone} title="Phone" content="+252 61 XXX XXXX" />
+              <ContactInfo
+                icon={MapPin}
+                title="Our Location"
+                content={
+                  <>
+                    Mogadishu, Somalia<br />
+                    Minnesota, USA
+                  </>
+                }
+              />
+              <ContactInfo icon={Phone} title="Phone" content="+252 617 255 936" />
               <ContactInfo icon={Mail} title="Email" content="info@hindis.so" />
             </div>
 
             <div className="pt-10 border-t border-brand-sand">
               <h4 className="text-sm font-bold text-gray-400 uppercase tracking-[0.2em] mb-8">Follow Our Journey</h4>
               <div className="flex gap-6">
-                <a href="#" className="w-14 h-14 rounded-2xl bg-brand-sand/50 flex items-center justify-center text-brand-teal hover:bg-brand-teal hover:text-white transition-all shadow-sm">
+                <a href="#" className="w-14 h-14 rounded-2xl bg-brand-sand/50 flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-sm">
                   <InstagramIcon />
                 </a>
-                <a href="#" className="w-14 h-14 rounded-2xl bg-brand-sand/50 flex items-center justify-center text-brand-teal hover:bg-brand-teal hover:text-white transition-all shadow-sm">
-                  <TwitterIcon />
+                <a href="https://www.tiktok.com/@hindisedu" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-2xl bg-brand-sand/50 flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-sm">
+                  <TikTokIcon />
                 </a>
-                <a href="#" className="w-14 h-14 rounded-2xl bg-brand-sand/50 flex items-center justify-center text-brand-teal hover:bg-brand-teal hover:text-white transition-all shadow-sm">
+                <a href="https://www.facebook.com/people/Hindis/61556807271051/" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-2xl bg-brand-sand/50 flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-sm">
                   <FacebookIcon />
                 </a>
               </div>

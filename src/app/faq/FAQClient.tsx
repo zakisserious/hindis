@@ -13,10 +13,10 @@ const AccordionItem = ({ question, answer, isOpen, onClick }: { question: string
         onClick={onClick}
         className="w-full py-8 flex items-center justify-between text-left group"
       >
-        <span className={`text-xl md:text-2xl font-display font-bold transition-colors ${isOpen ? "text-brand-teal" : "text-gray-900 group-hover:text-brand-teal"}`}>
+        <span className={`text-xl md:text-2xl font-display font-bold transition-colors ${isOpen ? "text-brand-blue" : "text-gray-900 group-hover:text-brand-blue"}`}>
           {question}
         </span>
-        <div className={`shrink-0 ml-4 w-10 h-10 rounded-full flex items-center justify-center transition-all ${isOpen ? "bg-brand-teal text-white rotate-180" : "bg-brand-sand/50 text-brand-teal"}`}>
+        <div className={`shrink-0 ml-4 w-10 h-10 rounded-full flex items-center justify-center transition-all ${isOpen ? "bg-brand-blue text-white rotate-180" : "bg-brand-sand/50 text-brand-blue"}`}>
           {isOpen ? <Minus size={20} /> : <Plus size={20} />}
         </div>
       </button>
@@ -80,18 +80,22 @@ export default function FAQClient() {
     <div className="bg-white min-h-screen">
 
       {/* --- HERO --- */}
-      <section className="pt-40 pb-20 px-6 bg-brand-sand/10 relative overflow-hidden">
-        <motion.div
+      <section className="pt-48 pb-24 px-6 bg-brand-sand/50 relative overflow-hidden">
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-7xl mx-auto relative z-10"
+          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-7xl mx-auto text-center relative z-10"
         >
-          <span className="inline-block px-4 py-2 bg-brand-teal/10 text-brand-teal rounded-full font-bold text-xs uppercase tracking-widest mb-6">Support & Knowledge</span>
-          <h1 className="text-5xl md:text-7xl font-display font-extrabold text-gray-900 mb-8">
-            Frequently Asked <span className="text-brand-teal">Questions</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-gray-900 mb-8 tracking-tight">
+            Frequently Asked <span className="text-brand-blue">Questions</span>
           </h1>
+          <p className="text-gray-600 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed italic text-pretty">
+            Find answers to common questions about our mission, partnerships, and how we are transforming education in Somalia through innovative strategies.
+          </p>
         </motion.div>
+        {/* Background elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-blue/5 -skew-x-12 transform origin-top translate-x-20" />
       </section>
 
       {/* --- CONTENT --- */}
@@ -106,7 +110,7 @@ export default function FAQClient() {
           >
             <div className="mb-12">
               <h2 className="text-3xl font-display font-bold text-gray-900 mb-2">General FAQ</h2>
-              <div className="w-16 h-1 bg-brand-teal rounded-full" />
+              <div className="w-16 h-1 bg-brand-blue rounded-full" />
             </div>
 
             <div className="border-t border-brand-sand">
@@ -136,7 +140,7 @@ export default function FAQClient() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-teal/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-blue/40 to-transparent" />
               <div className="absolute bottom-12 left-12 right-12 text-white">
                 <p className="text-2xl font-display font-bold leading-tight">
                   Empowering every learner through the foundation of power.

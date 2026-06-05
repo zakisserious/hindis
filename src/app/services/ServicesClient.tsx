@@ -30,7 +30,7 @@ const ServiceBlock = ({
   >
     <div className={`flex flex-col ${reversed ? "md:flex-row-reverse" : "md:flex-row"} gap-16 md:gap-24 items-center`}>
       <div className="flex-1">
-        <div className="w-16 h-16 rounded-2xl bg-brand-teal/10 flex items-center justify-center text-brand-teal mb-8 shadow-sm">
+        <div className="w-16 h-16 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-8 shadow-sm">
           <Icon size={32} />
         </div>
         <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-6 leading-tight">{title}</h2>
@@ -40,7 +40,7 @@ const ServiceBlock = ({
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {features.map((feature, idx) => (
             <li key={idx} className="flex items-center gap-3 text-gray-800 font-medium">
-              <div className="w-6 h-6 rounded-lg bg-brand-teal flex items-center justify-center text-white shrink-0">
+              <div className="w-6 h-6 rounded-lg bg-brand-blue flex items-center justify-center text-white shrink-0">
                 <Settings size={12} />
               </div>
               {feature}
@@ -60,22 +60,22 @@ export default function ServicesClient() {
     <div className="bg-white min-h-screen">
       
       {/* --- HERO --- */}
-      <section className="pt-40 pb-24 px-6 bg-brand-sand/10 relative overflow-hidden">
+      <section className="pt-48 pb-24 px-6 bg-brand-sand/50 relative overflow-hidden">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-          className="max-width-7xl mx-auto text-center relative z-10"
+          className="max-w-7xl mx-auto text-center relative z-10"
         >
-          <h1 className="text-5xl md:text-7xl font-display font-extrabold text-gray-900 mb-8 tracking-tight">
-            Our <span className="text-brand-teal">Services</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-gray-900 mb-8 tracking-tight">
+            Our <span className="text-brand-blue">Services</span>
           </h1>
           <p className="text-gray-600 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed italic text-pretty">
             Driving system-level change through innovative, student-centered strategies that are engaging, culturally relevant, and responsive to today&apos;s world.
           </p>
         </motion.div>
         {/* Background elements */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-teal/5 -skew-x-12 transform origin-top translate-x-20" />
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-blue/5 -skew-x-12 transform origin-top translate-x-20" />
       </section>
 
       {/* --- SERVICES LIST --- */}
@@ -124,7 +124,7 @@ export default function ServicesClient() {
       </div>
 
       {/* --- FOOTER CTA --- */}
-      <Section className="bg-brand-teal text-white mt-12 mb-0 py-24 rounded-t-[5rem]">
+      <Section className="bg-brand-blue text-white mt-12 mb-0 py-24 rounded-t-[5rem]">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -137,7 +137,7 @@ export default function ServicesClient() {
           <p className="text-brand-sand/80 text-lg md:text-xl mb-12">
             Let's discuss how our services can be tailored to meet your unique educational challenges.
           </p>
-          <a href="/contact" className="bg-white text-brand-teal px-12 py-5 rounded-full font-extrabold text-lg shadow-xl hover:bg-brand-sand transition-all inline-block">
+          <a href="/contact" className="bg-white text-brand-blue px-12 py-5 rounded-full font-extrabold text-lg shadow-xl hover:bg-brand-sand transition-all inline-block">
             Get in Touch
           </a>
         </motion.div>

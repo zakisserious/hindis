@@ -153,7 +153,7 @@ export default function HomeClient() {
                 <div>
                   <h4 className="text-lg font-bold text-gray-900 mb-2">Our Vision</h4>
                   <p className="text-gray-600 leading-relaxed">
-                    Vision For global resilience.
+                    To pioneer resilient education systems that empower the next generation with the foundational mastery and global mindset to lead, innovate, and thrive.
                   </p>
                 </div>
               </div>

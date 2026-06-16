@@ -149,7 +149,7 @@ export default function PublicationClient() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-4">The Launch of Hindis</h2>
-            <p className="text-gray-500">A milestone event celebrating the beginning of our mission in Somalia.</p>
+            <p className="text-gray-500">A milestone event celebrating the beginning of our mission.</p>
           </div>
 
           <motion.div

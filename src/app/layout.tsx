@@ -14,10 +14,10 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Hindis | Foundational Learning Pioneers in Somalia",
+    default: "Hindis | Foundational Learning Pioneers",
     template: "%s | Hindis"
   },
-  description: "Pioneering quality foundational learning (literacy and numeracy) in Somalia through innovative, technology-driven teaching.",
+  description: "Pioneering quality foundational learning (literacy and numeracy) through innovative, technology-driven teaching.",
   icons: {
     icon: "/images/hindis-favicon-48x48.png",
     shortcut: "/images/hindis-favicon-48x48.png",

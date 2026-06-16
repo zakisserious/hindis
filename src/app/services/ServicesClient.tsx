@@ -111,7 +111,7 @@ export default function ServicesClient() {
         <ServiceBlock 
           icon={BarChart}
           title="Empowering through AI"
-          description="We leverage the power of Artificial Intelligence to revolutionize educational data collection, monitoring, and evaluation."
+          description="We leverage the power of Artificial Intelligence to revolutionize educational data collection, monitoring, and evaluation, and learning about AI"
           features={[
             "Data Collection",
             "Program Monitoring",

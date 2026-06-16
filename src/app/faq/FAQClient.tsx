@@ -48,8 +48,8 @@ export default function FAQClient() {
       answer: "Foundational learning is critical as it sets the stage for all future educational endeavors. Establishing a strong base in the early years ensures that children develop essential skills such as literacy and numeracy, which are crucial for their personal and academic growth. It also helps to inculcate values, such as competence and compassion, which are integral to the development of a productive and socially responsible citizenry."
     },
     {
-      question: "How does foundational learning in Somalia prepare students for global challenges?",
-      answer: "Foundational learning in Somalia is designed to equip students with a broad range of competencies, from critical thinking to adaptability, which are necessary to navigate and succeed in a globalized world. By incorporating innovative teaching methods and addressing local challenges, the education system aims to build resilience and cultural awareness, enabling students to effectively participate in a diverse and interconnected global community."
+      question: "How does foundational learning prepare students for global challenges?",
+      answer: "Foundational learning is designed to equip students with a broad range of competencies, from critical thinking to adaptability, which are necessary to navigate and succeed in a globalized world. By incorporating innovative teaching methods and addressing local challenges, the education system aims to build resilience and cultural awareness, enabling students to effectively participate in a diverse and interconnected global community."
     },
     {
       question: "How does Hindis address the unique challenges faced by students?",
@@ -57,7 +57,7 @@ export default function FAQClient() {
     },
     {
       question: "Who can partner up with Hindis?",
-      answer: `Hindis welcomes partnerships with a wide range of organizations and individuals committed to improving foundational education in Somalia, including:
+      answer: `Hindis welcomes partnerships with a wide range of organizations and individuals committed to improving foundational education, including:
 
 • Governmental Agencies: Ministries of Education and other departments for policymaking and curriculum development.
 
@@ -91,7 +91,7 @@ export default function FAQClient() {
             Frequently Asked <span className="text-brand-blue">Questions</span>
           </h1>
           <p className="text-gray-600 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed italic text-pretty">
-            Find answers to common questions about our mission, partnerships, and how we are transforming education in Somalia through innovative strategies.
+            Find answers to common questions about our mission, partnerships, and how we are transforming education through innovative strategies.
           </p>
         </motion.div>
         {/* Background elements */}

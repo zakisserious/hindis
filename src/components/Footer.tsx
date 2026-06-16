@@ -14,6 +14,10 @@ const FacebookIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
 );
 
+const LinkedinIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
+);
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -37,7 +41,7 @@ export default function Footer() {
               Pioneering quality foundational learning in Somalia. Together, we are building a future of competence, productivity, and compassion.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-sm">
+              <Link href="https://www.instagram.com/hindis__/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-sm">
                 <InstagramIcon />
               </Link>
               <Link href="https://www.tiktok.com/@hindisedu" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-sm">
@@ -45,6 +49,9 @@ export default function Footer() {
               </Link>
               <Link href="https://www.facebook.com/people/Hindis/61556807271051/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-sm">
                 <FacebookIcon />
+              </Link>
+              <Link href="https://www.linkedin.com/company/hindis" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-sm">
+                <LinkedinIcon />
               </Link>
             </div>
           </div>

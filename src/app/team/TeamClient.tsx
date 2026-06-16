@@ -56,13 +56,13 @@ export default function TeamClient() {
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">Saida Hassan</h2>
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed text-pretty">
               <p>
-                Saida is a committed professional in the Education field. She is currently pursuing her M.A. at Harvard Graduate School of Education, focusing on Policy and Analysis.
+                Saida Hassan is an education and social development professional and the Founder and Executive Director of Hindis Global Education Enterprise. She has extensive experience strengthening education systems, developing curricula, advancing literacy initiatives, and supporting community-centered learning across the Horn of Africa, with a focus on equitable and culturally grounded education.
               </p>
               <p>
-                Over the past five years, she has dedicated her efforts to education in Somalia, holding various positions within the Federal Ministry of Education, Culture, and Higher Education.
+                Her work spans curriculum development, teacher support, Somali-language educational materials, and strategic partnerships with government institutions, development organizations, and local communities. She has contributed to initiatives in foundational literacy, girls’ education, youth empowerment, climate change education, and inclusive learning while helping expand access to quality education across the region.
               </p>
               <p>
-                As the Founder of Hindis, she is actively working to address the challenges within Somalia&apos;s education system by introducing innovative teaching and learning methods.
+                Through Hindis, Saida leads stakeholder engagement, curriculum reviews, training workshops, and collaborative education programs that promote sustainability, local ownership, and innovation. She is committed to preserving Somali language and culture while creating opportunities that empower children, youth, and communities and strengthen long-term educational outcomes.
               </p>
             </div>
           </motion.div>
@@ -98,13 +98,13 @@ export default function TeamClient() {
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">Lucky Omaar</h2>
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed text-pretty">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Lucky Omaar is a humanitarian and development strategist with over a decade of experience designing and supporting programmes across the Horn of Africa. Her expertise includes gender equality, education, livelihoods, governance, institutional strengthening, participatory action research, and social transformation in fragile and conflict-affected settings.
               </p>
               <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                She has worked with governments, international organizations, civil society, and local communities to develop evidence-based programmes that strengthen resilience and expand opportunities for women and youth. Her experience spans programme design, strategic planning, research, monitoring and evaluation, stakeholder engagement, and partnership development. Lucky holds a Master’s degree with Distinction in Education, Gender and International Development from University College London Institute of Education, a Bachelor’s degree in Psychology and English from the University of Minnesota, and is a Fulbright Scholar.
               </p>
               <p>
-                Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.
+                At Hindis, Lucky leads programme design and strategic planning while supporting research, partnerships, and technical advisory work across education, gender equality, governance, and social development initiatives. She is committed to locally led, evidence-informed approaches that strengthen institutions and create sustainable, community-driven change across the Horn of Africa.
               </p>
             </div>
           </motion.div>

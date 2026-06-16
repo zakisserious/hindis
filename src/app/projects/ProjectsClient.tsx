@@ -22,7 +22,7 @@ const projects: Project[] = [
   },
   {
     id: "somali-curriculum",
-    title: "Somali Language Curriculum",
+    title: "Somali Language TextBook Curriculum",
     description: "In collaboration with the Federal Ministry of Education, Culture, and Higher Education, Saida played a pivotal role in designing the first-ever early child and primary Somali language and numeracy curriculum. This milestone represents a systematic step towards establishing standardized, high-quality foundational learning for millions of students.",
     images: ["/images/project_1_0.jpg", "/images/project_1_1.jpg", "/images/project_1_2.jpg", "/images/project_1_3.jpg"]
   }
@@ -111,7 +111,7 @@ export default function ProjectsClient() {
             Impact & <span className="text-brand-blue">Innovation</span>
           </h1>
           <p className="text-gray-600 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed italic text-pretty">
-            Our initiatives are designed to revolutionize foundational learning in Somalia, combining local cultural roots with global educational standards.
+            Our initiatives are designed to revolutionize foundational learning in education systems, combining cultural roots with global educational standards.
           </p>
         </motion.div>
         {/* Background elements */}
@@ -138,7 +138,7 @@ export default function ProjectsClient() {
                   In a major breakthrough for literacy, Hindis successfully partnered with the non-profit organization &quot;Books For Africa&quot; to bring educational resources to the heart of the capital.
                 </p>
                 <p className="font-medium text-gray-900">
-                  Together, we delivered 41,000+ targeted books to Mogadishu, directly enriching the foundations of literacy and numeracy for tens of thousands of school children.
+                  Together, we delivered 41,000+ targeted books to major urban centers, directly enriching the foundations of literacy and numeracy for tens of thousands of school children.
                 </p>
                 <div className="pt-8 grid grid-cols-2 gap-8">
                   <div>

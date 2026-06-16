@@ -3,7 +3,7 @@ import AboutClient from "./AboutClient";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn about Hindis' mission to pioneer quality foundational learning in Somalia.",
+  description: "Learn about Hindis' mission to pioneer quality foundational learning.",
 };
 
 export default function AboutPage() {

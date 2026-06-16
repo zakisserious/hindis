@@ -3,7 +3,7 @@ import HomeClient from "./HomeClient";
 
 export const metadata: Metadata = {
   title: "Home",
-  description: "Pioneering quality foundational learning in Somalia. Together, we are building a future of competence, productivity, and compassion.",
+  description: "Pioneering quality foundational learning through innovative, technology-driven teaching.",
 };
 
 export default function HomePage() {

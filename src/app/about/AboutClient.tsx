@@ -51,7 +51,7 @@ export default function AboutClient() {
           className="max-w-7xl mx-auto text-center relative z-10"
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-gray-900 mb-8 tracking-tight">
-            Pioneering Innovation in <span className="text-brand-blue">Somali Education</span>
+            Pioneering innovations in <span className="text-brand-blue">Education Systems</span>
           </h1>
           <p className="text-gray-600 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed italic text-pretty">
             At Hindis, we believe in distinctive and innovative teaching that enhances foundational Literacy and Numeracy for a globally connected world.
@@ -88,10 +88,10 @@ export default function AboutClient() {
             </h2>
             <div className="space-y-6 text-gray-600 leading-relaxed text-lg text-pretty">
               <p>
-                We believe in proposing distinctive and innovative teaching and learning strategies that address students&apos; needs and local educational issues in Somalia.
+                We believe in proposing distinctive and innovative teaching and learning strategies that address students&apos; needs and local educational issues.
               </p>
               <p>
-                In partnership with government and international organizations, we strive to provide students with extraordinary learning and critical thinking opportunities. Our goal is to prepare them for the complexities of a globally connected world through innovative approaches.
+                In partnership with government and international organizations, we strive to provide extraordinary learning and critical thinking opportunities within education systems.
               </p>
               <div className="pt-4">
                 <div className="flex items-center gap-3 text-brand-blue font-bold mb-2">
@@ -172,7 +172,7 @@ export default function AboutClient() {
               Want to learn more <br />about our impact?
             </h2>
             <p className="text-brand-sand/90 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
-              Our projects span across borders, from the Somali diaspora to the streets of Mogadishu.
+              Our projects span across borders, from the diaspora to major urban centers.
               Discover how we are making a difference today.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">

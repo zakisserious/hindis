@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Section from "@/components/Section";
+import PageHero from "@/components/PageHero";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -23,12 +24,12 @@ const projects: Project[] = [
   {
     id: "somali-curriculum",
     title: "Somali Language TextBook Curriculum",
-    description: "In collaboration with the Federal Ministry of Education, Culture, and Higher Education, Saida played a pivotal role in designing the first-ever early child and primary Somali language and numeracy curriculum. This milestone represents a systematic step towards establishing standardized, high-quality foundational learning for millions of students.",
+    description: "In collaboration with the Federal Ministry of Education, Culture, and Higher Education, Hindis played a pivotal role in designing the first-ever early child and primary Somali language and numeracy curriculum. This milestone represents a systematic step towards establishing standardized, high-quality foundational learning for millions of students.",
     images: ["/images/project_1_0.jpg", "/images/project_1_1.jpg", "/images/project_1_2.jpg", "/images/project_1_3.jpg"]
   }
 ];
 
-const ProjectCard = ({ project, idx }: { project: Project; idx: number }) => {
+const ProjectCard = ({ project }: { project: Project }) => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const nextImage = () => setCurrentImage((prev) => (prev + 1) % project.images.length);
@@ -36,11 +37,7 @@ const ProjectCard = ({ project, idx }: { project: Project; idx: number }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: idx * 0.1, duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-      className="bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-brand-sand/50 flex flex-col h-full group hover:shadow-2xl transition-all duration-500"
+      className="bg-white rounded-2xl overflow-hidden shadow-xl border border-brand-sand/50 flex flex-col h-full group hover:shadow-2xl transition-all duration-500"
     >
       {/* Slideshow Area */}
       <div className="relative aspect-[4/3] bg-gray-900 group-hover:scale-[1.02] transition-transform duration-700">
@@ -57,6 +54,7 @@ const ProjectCard = ({ project, idx }: { project: Project; idx: number }) => {
               src={project.images[currentImage]}
               alt={project.title}
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
           </motion.div>
@@ -64,11 +62,21 @@ const ProjectCard = ({ project, idx }: { project: Project; idx: number }) => {
 
         {/* Navigation Overlays */}
         {project.images.length > 1 && (
-          <div className="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-            <button onClick={prevImage} className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center hover:bg-white/40 transition-colors">
+          <div className="absolute inset-0 flex items-center justify-between p-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100 transition-opacity">
+            <button
+              type="button"
+              onClick={prevImage}
+              aria-label="Previous image"
+              className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center hover:bg-white/40 focus-visible:bg-white/40 transition-colors"
+            >
               <ChevronLeft size={24} />
             </button>
-            <button onClick={nextImage} className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center hover:bg-white/40 transition-colors">
+            <button
+              type="button"
+              onClick={nextImage}
+              aria-label="Next image"
+              className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center hover:bg-white/40 focus-visible:bg-white/40 transition-colors"
+            >
               <ChevronRight size={24} />
             </button>
           </div>
@@ -100,29 +108,16 @@ export default function ProjectsClient() {
     <div className="bg-white min-h-screen">
 
       {/* --- HERO --- */}
-      <section className="pt-40 md:pt-48 pb-24 px-6 bg-brand-sand/50 relative overflow-hidden">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-7xl mx-auto text-center relative z-10"
-        >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-gray-900 mb-8 tracking-tight">
-            Impact & <span className="text-brand-blue">Innovation</span>
-          </h1>
-          <p className="text-gray-600 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed italic text-pretty">
-            Our initiatives are designed to revolutionize foundational learning in education systems, combining cultural roots with global educational standards.
-          </p>
-        </motion.div>
-        {/* Background elements */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-blue/5 -skew-x-12 transform origin-top translate-x-20" />
-      </section>
+      <PageHero
+        title={<>Our <span className="text-brand-blue">programmes</span></>}
+        subtitle="Teacher training, classroom books and school support, with figures we can report for each."
+      />
 
       {/* --- PROJECTS GRID --- */}
       <Section className="bg-white" containerClassName="max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {projects.map((project, idx) => (
-            <ProjectCard key={project.id} project={project} idx={idx} />
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </Section>
@@ -143,7 +138,7 @@ export default function ProjectsClient() {
                 <div className="pt-8 grid grid-cols-2 gap-8">
                   <div>
                     <div className="text-4xl font-display font-extrabold text-brand-blue mb-1">41,000+</div>
-                    <p className="text-gray-400 font-bold uppercase tracking-widest text-[10px]">Resource Delivered</p>
+                    <p className="text-gray-400 font-bold uppercase tracking-widest text-[10px]">Resources Delivered</p>
                   </div>
                   <div>
                     <div className="text-4xl font-display font-extrabold text-brand-blue mb-1">100+</div>
@@ -153,16 +148,13 @@ export default function ProjectsClient() {
               </div>
             </div>
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-              className="order-1 md:order-2 relative aspect-square rounded-[3.5rem] bg-brand-sand overflow-hidden shadow-2xl"
+              className="order-1 md:order-2 relative aspect-square rounded-3xl bg-brand-sand overflow-hidden shadow-2xl"
             >
               <Image
                 src="/images/booksforafrica.jpg"
                 alt="Books For Africa Partnership"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </motion.div>

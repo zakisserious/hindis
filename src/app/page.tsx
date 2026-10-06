@@ -3,7 +3,7 @@ import HomeClient from "./HomeClient";
 
 export const metadata: Metadata = {
   title: "Home",
-  description: "Pioneering quality foundational learning through innovative, technology-driven teaching.",
+  description: "Hindis trains teachers and supplies books so children learn to read, write and count.",
 };
 
 export default function HomePage() {

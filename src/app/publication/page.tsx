@@ -3,7 +3,7 @@ import PublicationClient from "./PublicationClient";
 
 export const metadata: Metadata = {
   title: "Publication",
-  description: "Explore Hindis' research and evidence-based insights into foundational learning and educational transformation.",
+  description: "Hindis research on teacher training, enrolment and foundational learning.",
 };
 
 export default function PublicationPage() {

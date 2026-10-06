@@ -5,12 +5,16 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import Section from "@/components/Section";
+import PageHero from "@/components/PageHero";
 
-const AccordionItem = ({ question, answer, isOpen, onClick }: { question: string; answer: string; isOpen: boolean; onClick: () => void }) => {
+const AccordionItem = ({ id, question, answer, isOpen, onClick }: { id: number; question: string; answer: string; isOpen: boolean; onClick: () => void }) => {
   return (
     <div className="border-b border-brand-sand/50 last:border-0">
       <button
         onClick={onClick}
+        aria-expanded={isOpen}
+        aria-controls={`faq-panel-${id}`}
+        id={`faq-button-${id}`}
         className="w-full py-8 flex items-center justify-between text-left group"
       >
         <span className={`text-xl md:text-2xl font-display font-bold transition-colors ${isOpen ? "text-brand-blue" : "text-gray-900 group-hover:text-brand-blue"}`}>
@@ -23,6 +27,9 @@ const AccordionItem = ({ question, answer, isOpen, onClick }: { question: string
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id={`faq-panel-${id}`}
+            role="region"
+            aria-labelledby={`faq-button-${id}`}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -80,32 +87,16 @@ export default function FAQClient() {
     <div className="bg-white min-h-screen">
 
       {/* --- HERO --- */}
-      <section className="pt-48 pb-24 px-6 bg-brand-sand/50 relative overflow-hidden">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-7xl mx-auto text-center relative z-10"
-        >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-gray-900 mb-8 tracking-tight">
-            Frequently Asked <span className="text-brand-blue">Questions</span>
-          </h1>
-          <p className="text-gray-600 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed italic text-pretty">
-            Find answers to common questions about our mission, partnerships, and how we are transforming education through innovative strategies.
-          </p>
-        </motion.div>
-        {/* Background elements */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-blue/5 -skew-x-12 transform origin-top translate-x-20" />
-      </section>
+      <PageHero
+        title={<>Frequently Asked <span className="text-brand-blue">Questions</span></>}
+        subtitle="Answers about our teacher training, our partnerships, and how the work is funded."
+      />
 
       {/* --- CONTENT --- */}
       <Section className="bg-white">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
 
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
             className="space-y-4"
           >
             <div className="mb-12">
@@ -117,6 +108,7 @@ export default function FAQClient() {
               {faqs.map((faq, idx) => (
                 <AccordionItem
                   key={idx}
+                  id={idx}
                   {...faq}
                   isOpen={openIndex === idx}
                   onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
@@ -127,23 +119,20 @@ export default function FAQClient() {
 
           {/* Decorative Side Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             className="sticky top-32 hidden lg:block"
           >
-            <div className="relative aspect-[4/5] rounded-[4rem] overflow-hidden shadow-2xl">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/core_values.jpg"
                 alt="Hindis Educational Impact"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-blue/40 to-transparent" />
               <div className="absolute bottom-12 left-12 right-12 text-white">
                 <p className="text-2xl font-display font-bold leading-tight">
-                  Empowering every learner through the foundation of power.
+                  Empowering every learner with a strong foundation.
                 </p>
               </div>
             </div>

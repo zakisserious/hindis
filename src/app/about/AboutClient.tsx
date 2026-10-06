@@ -4,24 +4,20 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Section from "@/components/Section";
-import { CheckCircle2, Target, Eye, ShieldCheck, Heart, Zap, Globe, MessageSquare, Lightbulb } from "lucide-react";
+import PageHero from "@/components/PageHero";
+import { CheckCircle2, Target, Eye, ShieldCheck, Heart, Zap, Globe, MessageSquare, Lightbulb, type LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const ValueCard = ({ icon: Icon, title, description, idx }: { icon: any; title: string; description: string; idx: number }) => (
+const ValueItem = ({ icon: Icon, title, description }: { icon: LucideIcon; title: string; description: string }) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    whileHover={typeof window !== 'undefined' && window.innerWidth > 768 ? { y: -8 } : {}}
-    transition={{ type: "spring", stiffness: 500, damping: 20 }}
-    className="bg-brand-sand/40 p-8 rounded-2xl border border-white hover:border-brand-blue hover:bg-brand-sand/60 transition-colors duration-200 shadow-sm cursor-default"
+    className="flex gap-5 border-t border-brand-sand py-8"
   >
-    <div className="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-6">
-      <Icon size={24} />
+    <Icon size={22} className="mt-1 shrink-0 text-brand-red" />
+    <div>
+      <h4 className="mb-2 text-xl font-display font-bold text-gray-900">{title}</h4>
+      <p className="text-sm leading-relaxed text-gray-600">{description}</p>
     </div>
-    <h4 className="text-xl font-display font-bold text-gray-900 mb-3">{title}</h4>
-    <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
   </motion.div>
 );
 
@@ -43,48 +39,29 @@ export default function AboutClient() {
     <div className="bg-white min-h-screen">
 
       {/* --- HERO --- */}
-      <section className="pt-40 md:pt-48 pb-24 px-6 bg-brand-sand/50 relative overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-7xl mx-auto text-center relative z-10"
-        >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-gray-900 mb-8 tracking-tight">
-            Pioneering innovations in <span className="text-brand-blue">Education Systems</span>
-          </h1>
-          <p className="text-gray-600 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed italic text-pretty">
-            At Hindis, we believe in distinctive and innovative teaching that enhances foundational Literacy and Numeracy for a globally connected world.
-          </p>
-        </motion.div>
-        {/* Background elements */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-blue/5 -skew-x-12 transform origin-top translate-x-20" />
-      </section>
+      <PageHero
+        title={<>How Hindis <span className="text-brand-blue">works</span></>}
+        subtitle="Hindis trains teachers, supplies classroom books, and supports Somali-language learning in the earliest grades."
+      />
 
       {/* --- OUR STORY --- */}
       <Section className="bg-white">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
             className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg"
           >
             <Image
               src="/images/about_team.jpg"
-              alt="Hindis Team"
+              alt="Students working on laptops in a classroom"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-8">
-              Enhancing Early Foundational Learning
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-8 text-pretty">
+              Enhancing early <span className="accent-underline">foundational learning</span>
             </h2>
             <div className="space-y-6 text-gray-600 leading-relaxed text-lg text-pretty">
               <p>
@@ -110,15 +87,15 @@ export default function AboutClient() {
 
       {/* --- CORE VALUES GRID --- */}
       <Section containerClassName="max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4 text-pretty">Our Core Values</h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
+        <div className="max-w-3xl mb-16">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-4 text-pretty">Our Core Values</h2>
+          <p className="text-gray-500 max-w-[60ch]">
             These fundamental principles guide every strategy we develop and every partnership we form.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {coreValues.map((value, idx) => (
-            <ValueCard key={idx} {...value} idx={idx} />
+        <div className="grid grid-cols-1 gap-x-16 md:grid-cols-2">
+          {coreValues.map((value) => (
+            <ValueItem key={value.title} {...value} />
           ))}
         </div>
       </Section>
@@ -137,17 +114,13 @@ export default function AboutClient() {
             {additionalValues.map((val, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: idx * 0.1 }}
                 className={cn(
                   "text-center",
                   idx === 4 ? "col-span-2 md:col-span-1" : "col-span-1"
                 )}
               >
                 <div className="text-2xl md:text-3xl font-display font-extrabold text-white mb-2">{val}</div>
-                <div className="w-8 h-1 bg-brand-red mx-auto rounded-full opacity-50" />
+                <div className="w-8 h-1 bg-brand-red mx-auto rounded-full" />
               </motion.div>
             ))}
           </div>
@@ -157,19 +130,11 @@ export default function AboutClient() {
       {/* --- CALL TO ACTION (Home Style) --- */}
       <section className="py-32 px-6">
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-5xl mx-auto bg-brand-blue rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl"
+          className="max-w-5xl mx-auto bg-brand-blue rounded-2xl p-12 md:p-24 text-center relative overflow-hidden shadow-2xl"
         >
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-sand rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
-          </div>
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-8 text-pretty">
-              Want to learn more <br />about our impact?
+              Want to learn more about our impact?
             </h2>
             <p className="text-brand-sand/90 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
               Our projects span across borders, from the diaspora to major urban centers.
